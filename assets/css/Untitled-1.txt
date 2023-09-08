@@ -1,0 +1,126 @@
+
+/* ---------- Portfolio ------- */
+
+
+/* Create a wrapper to hold the side-by-side divs */
+.wrapper {
+  display: flex;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cols-1 {
+  background-image: url('./../img/section-parallax2Left.jpg');
+}
+
+.cols-2 {
+  background-color: #333;
+}
+.col-right-side{
+  width: 100%;
+  height: 100%;
+}
+.hr-lines {
+  font-family: sans-serif;
+  margin: 12px 22px;
+  color: var(--light);
+  text-align: left;
+  font-size: 24px;
+  max-width: 600px;
+  position: relative;
+  letter-spacing: 4px;
+  padding-left: 6px;
+}
+
+.hr-lines:before {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 5px;
+  background: var(--primary-color);
+ padding-right: 22px;
+  left: 0;
+  top: 50%;
+  position: absolute;
+  margin-left: -64px;
+}
+
+.col-right-side h2{
+  padding-left: 22px;
+  font-size: 36px;
+}
+
+.col-right-side  p{
+  padding-left: 22px;
+  font-size: 16px;
+}
+
+/* ------ Service ---------  */
+
+.col-a{
+color: var(--dark);
+}
+.col-b {
+  background-image: url('./../img/section-parallax3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+
+ 
+}
+.hr-line {
+  margin: 12px 22px;
+  color: var(--dark);
+  text-align: left;
+  font-size: 24px;
+  max-width: 600px;
+  position: relative;
+  letter-spacing: 4px;
+  padding-left: 6px;
+}
+
+.hr-line:before {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 5px;
+  background: var(--primary-color);
+ padding-right: 22px;
+  left: 0;
+  top: 50%;
+  position: absolute;
+  margin-left: -64px;
+}
+.col-left-side{
+  height: 100%;
+  padding-right: 22px;
+}
+
+.service-icons {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--secondary-color);
+  align-content: center;
+  top: 50% !;
+}
+

@@ -143,6 +143,8 @@ i {
 
 #hero .btn-hero {
   background-color: var(--primary-color);
+  /* Replace with your desired color and opacity */
+  background-blend-mode: overlay;
   outline: none;
   text-decoration: none;
   color: var(--light);
@@ -182,95 +184,6 @@ i {
   margin-top: 30px;
 }
 
-#hero .btn-menu,
-#hero .btn-book {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 50px;
-  transition: 0.3s;
-  line-height: 1;
-  color: white;
-  border: 2px solid #cda45e;
-}
-
-#hero .btn-menu:hover,
-#hero .btn-book:hover {
-  background: #cda45e;
-  color: #fff;
-}
-
-#hero .btn-book {
-  margin-left: 15px;
-}
-
-#hero .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#cda45e 50%, rgba(205, 164, 94, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-#hero .play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-#hero .play-btn::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(205, 164, 94, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-#hero .play-btn:hover::after {
-  border-left: 15px solid #cda45e;
-  transform: scale(20);
-}
-
-#hero .play-btn:hover::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
 
 @media (min-width: 1024px) {
   #hero {
@@ -402,45 +315,32 @@ i {
 }
 
 
-
-/* Add any additional styling you want for the divs */
-
-/* ---------- Portfolio ------- */
-
-
-/* Create a wrapper to hold the side-by-side divs */
-.wrapper {
-  display: flex;
+/* portfolio */
+.responsive-two-column-grid {
+  display: block;
 }
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px;
-  /* Should be removed. Only for demonstration */
+/* columns */
+.responsive-two-column-grid>* {
+  padding: 1rem;
 }
 
-/* Clear floats after the columns */
-.rows:after {
-  content: "";
-  display: table;
-  clear: both;
+/* tablet breakpoint */
+@media (min-width:768px) {
+  .responsive-two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.cols-1 {
+.responsive-two-column-grid .portfolio-left-side {
   background-image: url('./../img/section-parallax2Left.jpg');
-}
-
-.cols-2 {
-  background-color: #333;
-}
-.col-right-side{
-  width: 100%;
+  background-size: 100vw;
+  background-position: center;
   height: 100%;
 }
-.hr-lines {
-  font-family: sans-serif;
+
+.portfolio-right-side h1 {
   margin: 12px 22px;
   color: var(--light);
   text-align: left;
@@ -449,46 +349,34 @@ i {
   position: relative;
   letter-spacing: 4px;
   padding-left: 6px;
+  letter-spacing: 6px;
 }
 
-.hr-lines:before {
+.portfolio-right-side h1::before {
   content: "";
   display: block;
   width: 66px;
   height: 5px;
   background: var(--primary-color);
- padding-right: 22px;
+  padding-right: 22px;
   left: 0;
   top: 50%;
   position: absolute;
   margin-left: -64px;
 }
 
-.col-right-side h2{
-  padding-left: 22px;
-  font-size: 36px;
+.portfolio-right-side {
+  background-color: #333;
 }
 
-.col-right-side  p{
-  padding-left: 22px;
-  font-size: 16px;
+.potfolio-img {
+  margin-left: -10%;
+  margin-top: 44px;
 }
 
-/* ------ Service ---------  */
 
-.col-a{
-color: var(--dark);
-}
-.col-b {
-  background-image: url('./../img/section-parallax3.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-
- 
-}
-.hr-line {
+/* service  */
+.service-section-left h1 {
   margin: 12px 22px;
   color: var(--dark);
   text-align: left;
@@ -497,23 +385,21 @@ color: var(--dark);
   position: relative;
   letter-spacing: 4px;
   padding-left: 6px;
+  letter-spacing: 6px;
 }
 
-.hr-line:before {
+.service-section-left h1::before {
   content: "";
   display: block;
   width: 66px;
   height: 5px;
   background: var(--primary-color);
- padding-right: 22px;
+  padding-right: 22px;
   left: 0;
   top: 50%;
   position: absolute;
   margin-left: -64px;
-}
-.col-left-side{
-  height: 100%;
-  padding-right: 22px;
+
 }
 
 .service-icons {
@@ -522,10 +408,163 @@ color: var(--dark);
   width: 30px;
   text-align: center;
   text-decoration: none;
-  border: 1px solid var(--secondary-color);
+  border: 4px solid var(--secondary-color);
   border-radius: 50%;
   background-color: transparent;
   color: var(--secondary-color);
   align-content: center;
   top: 50% !;
+}
+
+.service-section-right {
+  background-image: url('./../img/section-parallax3.jpg');
+  background-size: 100vw;
+  background-position: center;
+  height: 100%;
+}
+
+/* client */
+
+.client-left-side {
+  background-image: url('./../img/section-leftcol-parallax2.jpg');
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Replace with your desired color and opacity */
+  background-blend-mode: overlay;
+  /* Blend the image and color together */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.client-right-side {
+  background-image: url('./../img/section-rightcol-parallax2.jpg');
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Replace with your desired color and opacity */
+  background-blend-mode: overlay;
+  /* Blend the image and color together */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.client-right-side h1 {
+  font-family: sans-serif;
+  margin: 12px 22px;
+  color: var(--dark);
+  text-align: left;
+  font-size: 24px;
+  max-width: 600px;
+  position: relative;
+  letter-spacing: 6px;
+  padding-left: 6px;
+}
+
+.client-right-side h1::before {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 5px;
+  background: var(--primary-color);
+  padding-right: 22px;
+  left: 0;
+  top: 50%;
+  position: absolute;
+  margin-left: -64px;
+}
+
+.client-right-side h2 {
+  font-family: sans-serif;
+  margin: 12px 24px;
+  color: var(--dark);
+  text-align: left;
+  font-size: 36px;
+  font-weight: 900;
+  max-width: 600px;
+  position: relative;
+  margin-top: 16px;
+
+}
+
+
+
+.wrapper {
+  display: flex;
+}
+
+.top-left-box {
+  margin-top: 33px;
+}
+
+.bottom-right-box {
+  margin-top: -99px;
+  margin-left: 170px;
+  height: 150px;
+  background-color: var(--secondary-color);
+  padding-left: 38px;
+}
+
+/* contact Section */
+
+.contact-section {
+  background-image: url("./../img/parallax-full1.jpg");
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0.7);
+  /* Replace with your desired color and opacity */
+  background-blend-mode: overlay;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  /* Adjust this value as needed */
+}
+
+.contact-section p {
+  text-align: center;
+  display: flex;
+}
+
+.contact-section button {
+  background-color: var(--primary-color);
+  outline: none;
+  text-decoration: none;
+  color: var(--light);
+  border: none;
+  text-align: center;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+/* --- footer --- */
+.footer-section .footer-link {
+  margin-top: 22px;
+  border-bottom: 2px solid #ccc;
+ 
+}
+.footer-section .footer-link a{
+  text-decoration: none;
+  color: #111;
+  padding: 0 12px;
+  
+}
+
+.footer-section small{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-section .social-icon {
+  font-size: 18px;
+  background-color: transparent;
+  color: #111;
+  padding: 8px;
+border-radius: 1px;
+border: none;
+  margin: 14px 0;
+  text-align: center;
 }
